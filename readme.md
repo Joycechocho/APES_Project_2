@@ -3,7 +3,9 @@
 
 
 ## Features Implemented ##
-1. Heartbeat (using Queue and TaskNotify)
-  a. From Pedometer Task to Communication Task
-  b. From Humidity Task to Communication Task
+*  Heartbeat (using Queue and TaskNotify)
+
+    * From Pedometer Task to Communication Task
+  
+    * From Humidity Task to Communication Task
 
