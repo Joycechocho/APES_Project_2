@@ -16,6 +16,7 @@
 #include "queue.h"
 
 #define HEARTBEAT_MSG 1
+#define DATA_MSG      2
 
 typedef enum task
 {
@@ -38,10 +39,11 @@ typedef struct
     Type        type;
     uint32_t    timestamp;
     Task        source;
-    uint8_t     message;
+    uint32_t     data;
     size_t      length;
 }message_t;
 
 void communicationTask(void *pvParameters);
 int8_t sendHeartbeat(Task task);
+int8_t sendData(Task task, uint32_t data);
 

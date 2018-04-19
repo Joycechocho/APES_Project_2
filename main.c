@@ -21,6 +21,7 @@
 #include "main.h"
 
 QueueHandle_t heartbeat_queue;
+QueueHandle_t data_queue;
 
 TaskHandle_t xTask3;
 
@@ -42,6 +43,7 @@ int main(void)
     PinoutSet(false, false);
 
     heartbeat_queue = xQueueCreate(10, sizeof(message_t));
+    data_queue = xQueueCreate(10, sizeof(message_t));
 
     // Create demo tasks
     xTaskCreate(pedometerTask, (const portCHAR *)"Pedometer",
