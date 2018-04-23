@@ -12,7 +12,7 @@ void pedometerTask(void *pvParameters)
         sendHeartbeat(PEDO_TASK);
         vTaskDelay(1000);
 
-        sendData(PEDO_TASK, pedo_data);
+        sendData(PEDO_TASK, pedo_data, PEDOMETER);
         vTaskDelay(3000);
     }
 }

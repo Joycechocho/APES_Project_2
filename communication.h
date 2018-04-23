@@ -22,7 +22,7 @@ typedef enum task
 {
     MAIN_TASK, //0
     PEDO_TASK,
-    HUM_TASK,
+    WEATHER_TASK,
     COMM_TASK
 }Task;
 
@@ -34,16 +34,25 @@ typedef enum type
     ERROR
 }Type;
 
+typedef enum data
+{
+    TEMPERATURE,
+    HUMIDITY,
+    PEDOMETER
+}Data;
+
+
 typedef struct
 {
     Type        type;
     uint32_t    timestamp;
     Task        source;
-    uint32_t     data;
+    uint32_t    data;
+    Data        sensor;
     size_t      length;
 }message_t;
 
 void communicationTask(void *pvParameters);
 int8_t sendHeartbeat(Task task);
-int8_t sendData(Task task, uint32_t data);
+int8_t sendData(Task task, uint32_t data, Data sensor);
 

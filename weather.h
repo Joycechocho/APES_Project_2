@@ -15,6 +15,6 @@
 #include "task.h"
 #include "queue.h"
 
-void humidityTask(void *pvParameters);
+void weatherTask(void *pvParameters);
 
 

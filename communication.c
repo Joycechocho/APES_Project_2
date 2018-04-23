@@ -11,8 +11,6 @@ void communicationTask(void *pvParameters)
     message_t data_msg;
     for (;;)
     {
-//        UARTprintf("In communication\n");
-
         xTaskNotifyWait( pdFALSE, 0xFFFFFFFF, &notifyValue, portMAX_DELAY );
         if(notifyValue & HEARTBEAT_MSG)
         {
@@ -20,14 +18,16 @@ void communicationTask(void *pvParameters)
             if(hb_msg.source == 1){
                 UARTprintf("\n\r [HEARBEAT] from [PEDO_TASK] ");
             }else if(hb_msg.source == 2){
-                UARTprintf("\n\r [HEARBEAT] from [HUMID_TASK] ");
+                UARTprintf("\n\r [HEARBEAT] from [WEATHER_TASK] ");
             }
         }if(notifyValue & DATA_MSG){
             xQueueReceive(data_queue, &data_msg, 10);
             if(data_msg.source == 1){
-                UARTprintf("\n\r [DATA] from [PEDO_TASK] is %d", data_msg.data);
-            }else if(data_msg.source == 2){
-                UARTprintf("\n\r [DATA] from [HUMID_TASK] is %d", data_msg.data);
+                UARTprintf("\n\r [PEDOMETER_DATA] from [PEDO_TASK] is %d", data_msg.data);
+            }else if(data_msg.source == 2 && data_msg.sensor == HUMIDITY){
+                UARTprintf("\n\r [HUMIDITY_DATA] from [WEATHER_TASK] is %d (percentage)", data_msg.data);
+            }else if(data_msg.source == 2 && data_msg.sensor == TEMPERATURE){
+                UARTprintf("\n\r [TEMPERATURE_DATA] from [WEATHER_TASK] is %d (degree celsius)", data_msg.data);
             }
         }
     }
@@ -41,6 +41,7 @@ int8_t sendHeartbeat(Task task)
     msg.source = task;
 
     msg.data = 0;
+    msg.sensor = 0;
     msg.length = 0;
     if(pdPASS != xQueueSend(heartbeat_queue, (void*)&msg, 10))
     {
@@ -51,7 +52,7 @@ int8_t sendHeartbeat(Task task)
     return 0;
 }
 
-int8_t sendData(Task task, uint32_t data)
+int8_t sendData(Task task, uint32_t data, Data sensor)
 {
     message_t msg;
     msg.type = DATA;
@@ -59,6 +60,7 @@ int8_t sendData(Task task, uint32_t data)
     msg.source = task;
 
     msg.data = data;
+    msg.sensor = sensor;
     msg.length = 0;
     if(pdPASS != xQueueSend(data_queue, (void*)&msg, 10))
     {

@@ -1,5 +1,6 @@
 #include <stdint.h>
 #include <stdbool.h>
+#include <weather.h>
 #include "drivers/pinout.h"
 #include "utils/uartstdio.h"
 
@@ -17,7 +18,7 @@
 
 #include "communication.h"
 #include "pedometer.h"
-#include "humidity.h"
+#include "I2C.h"
 #include "main.h"
 
 QueueHandle_t heartbeat_queue;
@@ -42,6 +43,9 @@ int main(void)
     // Initialize the GPIO pins for the Launchpad
     PinoutSet(false, false);
 
+    // Initialize the I2C for temperature and humidity
+    Init_I2C();
+
     heartbeat_queue = xQueueCreate(10, sizeof(message_t));
     data_queue = xQueueCreate(10, sizeof(message_t));
 
@@ -49,7 +53,7 @@ int main(void)
     xTaskCreate(pedometerTask, (const portCHAR *)"Pedometer",
                 configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 
-    xTaskCreate(humidityTask, (const portCHAR *)"Humidity",
+    xTaskCreate(weatherTask, (const portCHAR *)"Weather",
                 configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 
     xTaskCreate(communicationTask, (const portCHAR *)"Communication",
