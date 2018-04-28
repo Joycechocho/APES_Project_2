@@ -31,7 +31,7 @@ void Init_I2C(void)
 	GPIOPinTypeI2C(GPIO_PORTB_BASE, GPIO_PIN_3);
 
 	/*Setting the I2C transfer rate*/
-	I2CMasterInitExpClk(I2C0_BASE, 120000000U, false);
+	I2CMasterInitExpClk(I2C0_BASE, 32000000U, false);
 
 }
 

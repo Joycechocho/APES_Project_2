@@ -14,10 +14,10 @@ void weatherTask(void *pvParameters)
 
         humid_data = (int)I2C_Read_Humidity();
         sendData(WEATHER_TASK, humid_data, HUMIDITY);
-        vTaskDelay(3000);
+        vTaskDelay(500);
 
         temp_data = (int)I2C_Read_Temp();
         sendData(WEATHER_TASK, temp_data, TEMPERATURE);
-        vTaskDelay(3000);
+        vTaskDelay(500);
     }
 }
