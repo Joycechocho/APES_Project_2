@@ -46,9 +46,7 @@ int main(void)
     PinoutSet(false, false);
 
     // Initialize the I2C for temperature and humidity
-    if(Init_I2C() != 0){
-        sendError(2, 0);
-    };
+    Init_I2C();
     ConfigureUART();
 
     heartbeat_queue = xQueueCreate(10, sizeof(message_t));

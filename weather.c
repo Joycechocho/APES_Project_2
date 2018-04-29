@@ -2,17 +2,18 @@
 #include "communication.h"
 #include "I2C.h"
 
-uint32_t humid_data;
-uint32_t temp_data;
+int32_t humid_data;
+int32_t temp_data;
 
 void weatherTask(void *pvParameters)
 {
     for (;;)
     {
-        sendHeartbeat(2);
         vTaskDelay(1000);
+        sendHeartbeat(2);
 
         humid_data = (int)I2C_Read_Humidity();
+
         if(humid_data < 0)
         {
             sendError(2, 1);
@@ -22,7 +23,12 @@ void weatherTask(void *pvParameters)
         vTaskDelay(500);
 
         temp_data = (int)I2C_Read_Temp();
-        sendData(2, temp_data, 0);
+        if(temp_data < 0)
+        {
+            sendError(2, 0);
+        }else{
+            sendData(2, temp_data, 0);
+        }
         vTaskDelay(500);
     }
 }

@@ -22,6 +22,7 @@
 
 
 void ConfigureUART(void);
+void UART7IntHandler(void);
 
 
 #endif /* UART_H_ */

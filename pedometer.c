@@ -2,14 +2,12 @@
 #include "pedometer_driver.h"
 #include "communication.h"
 
-uint32_t pedo_data;
+int32_t pedo_data;
 
 void pedometerTask(void *pvParameters)
 {
-    if(I2C_write_pedometer() != 0)
-    {
-        sendError(1, 2);//1: pedo task 2: pedo sensor
-    };
+    I2C_write_pedometer();
+
 
     for (;;)
     {
@@ -20,7 +18,12 @@ void pedometerTask(void *pvParameters)
 
         pedo_data = (uint32_t)I2C_Read_pedometer();
 //        UARTprintf("\n PEDOMETER: %d\n",I2C_Read_pedometer());
-        sendData(1, pedo_data, 2);
+        if(pedo_data > 4000)
+        {
+            sendError(1, 2);//1: pedo task 2: pedo sensor
+        }else {
+            sendData(1, pedo_data, 2);
+        }
         vTaskDelay(1000);
     }
 }
