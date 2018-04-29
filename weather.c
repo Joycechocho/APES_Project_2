@@ -9,15 +9,15 @@ void weatherTask(void *pvParameters)
 {
     for (;;)
     {
-        sendHeartbeat(WEATHER_TASK);
+        sendHeartbeat(2);
         vTaskDelay(1000);
 
         humid_data = (int)I2C_Read_Humidity();
-        sendData(WEATHER_TASK, humid_data, HUMIDITY);
+        sendData(2, humid_data, 1);
         vTaskDelay(500);
 
         temp_data = (int)I2C_Read_Temp();
-        sendData(WEATHER_TASK, temp_data, TEMPERATURE);
+        sendData(2, temp_data, 0);
         vTaskDelay(500);
     }
 }

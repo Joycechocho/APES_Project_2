@@ -11,12 +11,12 @@ void pedometerTask(void *pvParameters)
     {
 //        UARTprintf("\n In Pedometer\n");
 
-        sendHeartbeat(PEDO_TASK);
+        sendHeartbeat(1);
         vTaskDelay(1000);
 
         pedo_data = (uint32_t)I2C_Read_pedometer();
 //        UARTprintf("\n PEDOMETER: %d\n",I2C_Read_pedometer());
-        sendData(PEDO_TASK, pedo_data, PEDOMETER);
+        sendData(1, pedo_data, 2);
         vTaskDelay(1000);
     }
 }

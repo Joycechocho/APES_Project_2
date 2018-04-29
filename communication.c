@@ -34,15 +34,15 @@ void communicationTask(void *pvParameters)
     }
 }
 
-int8_t sendHeartbeat(Task task)
+int8_t sendHeartbeat(uint32_t task)
 {
     message_t msg;
-    msg.type = HEARTBEAT;
+    msg.type = 1;
     msg.timestamp = 0;
     msg.source = task;
 
     msg.data = 0;
-    msg.sensor = NONE;
+    msg.sensor = 3;
     msg.length = 0;
     UARTSend_7((uint8_t*)&msg, sizeof(msg));
     if(pdPASS != xQueueSend(heartbeat_queue, (void*)&msg, 10))
@@ -54,10 +54,10 @@ int8_t sendHeartbeat(Task task)
     return 0;
 }
 
-int8_t sendData(Task task, uint32_t data, Data sensor)
+int8_t sendData(uint32_t task, uint32_t data, uint32_t sensor)
 {
     message_t msg;
-    msg.type = DATA;
+    msg.type = 2;
     msg.timestamp = 0;
     msg.source = task;
 
