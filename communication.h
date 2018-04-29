@@ -15,8 +15,9 @@
 #include "task.h"
 #include "queue.h"
 
-#define HEARTBEAT_MSG 1
-#define DATA_MSG      2
+#define HEARTBEAT_MSG  1
+#define DATA_MSG       2
+#define ERROR_MSG      3
 
 typedef enum task
 {
@@ -56,6 +57,7 @@ typedef struct
 void communicationTask(void *pvParameters);
 int8_t sendHeartbeat(uint32_t task);
 int8_t sendData(uint32_t task, uint32_t data, uint32_t sensor);
+int8_t sendError(uint32_t task, uint32_t sensor);
 void UARTSend_7(const uint8_t *pui8Buffer, uint32_t ui32Count);
 void UARTSend(const uint8_t *pui8Buffer, uint32_t ui32Count);
 

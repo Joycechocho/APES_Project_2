@@ -6,7 +6,11 @@ uint32_t pedo_data;
 
 void pedometerTask(void *pvParameters)
 {
-    I2C_write_pedometer();
+    if(I2C_write_pedometer() != 0)
+    {
+        sendError(1, 2);//1: pedo task 2: pedo sensor
+    };
+
     for (;;)
     {
 //        UARTprintf("\n In Pedometer\n");

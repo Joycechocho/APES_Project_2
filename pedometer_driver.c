@@ -7,7 +7,7 @@ uint8_t Pedo_LSB = 0;
 uint16_t Pedo_data;
 
 
-void I2C_write_pedometer()
+int8_t I2C_write_pedometer()
 {
 	/*Specifying address of slave device and write mode*/
 	I2CMasterSlaveAddrSet(I2C0_BASE, SLAVE_ADDR, false);
@@ -79,6 +79,7 @@ void I2C_write_pedometer()
 	// I2CMasterSlaveAddrSet(I2C0_BASE, SLAVE_ADDR, true);
 
 	/*Sending the control byte and reading from the register*/
+	return 0;
 
 }
 

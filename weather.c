@@ -13,7 +13,12 @@ void weatherTask(void *pvParameters)
         vTaskDelay(1000);
 
         humid_data = (int)I2C_Read_Humidity();
-        sendData(2, humid_data, 1);
+        if(humid_data < 0)
+        {
+            sendError(2, 1);
+        }else{
+            sendData(2, humid_data, 1);
+        }
         vTaskDelay(500);
 
         temp_data = (int)I2C_Read_Temp();

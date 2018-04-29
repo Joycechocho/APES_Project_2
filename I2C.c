@@ -11,7 +11,7 @@ uint32_t Temp_MSB = 0;
 uint32_t Temp_LSB = 0;
 float Temp_C;
   
-void Init_I2C(void)
+int8_t Init_I2C(void)
 {
 	/*Enable the I2C*/
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_I2C0);
@@ -32,6 +32,8 @@ void Init_I2C(void)
 
 	/*Setting the I2C transfer rate*/
 	I2CMasterInitExpClk(I2C0_BASE, 32000000U, false);
+
+	return 0;
 
 }
 

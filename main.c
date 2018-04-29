@@ -24,6 +24,7 @@
 
 QueueHandle_t heartbeat_queue;
 QueueHandle_t data_queue;
+QueueHandle_t error_queue;
 
 TaskHandle_t xTask3;
 
@@ -45,11 +46,14 @@ int main(void)
     PinoutSet(false, false);
 
     // Initialize the I2C for temperature and humidity
-    Init_I2C();
+    if(Init_I2C() != 0){
+        sendError(2, 0);
+    };
     ConfigureUART();
 
     heartbeat_queue = xQueueCreate(10, sizeof(message_t));
     data_queue = xQueueCreate(10, sizeof(message_t));
+    error_queue = xQueueCreate(10, sizeof(message_t));
 
     // Create demo tasks
     xTaskCreate(pedometerTask, (const portCHAR *)"Pedometer",

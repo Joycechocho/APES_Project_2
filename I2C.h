@@ -28,6 +28,6 @@
 float I2C_Read_Humidity();
 float I2C_Read_Temp();
 
-void Init_I2C(void);
+int8_t Init_I2C(void);
 
 #endif /* I2C_H_ */

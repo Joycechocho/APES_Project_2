@@ -3,6 +3,7 @@
 
 extern QueueHandle_t heartbeat_queue;
 extern QueueHandle_t data_queue;
+extern QueueHandle_t error_queue;
 extern TaskHandle_t xTask3;
 
 void communicationTask(void *pvParameters)
@@ -10,6 +11,7 @@ void communicationTask(void *pvParameters)
     uint32_t notifyValue;
     message_t hb_msg;
     message_t data_msg;
+    message_t error_msg;
     for (;;)
     {
         xTaskNotifyWait( pdFALSE, 0xFFFFFFFF, &notifyValue, portMAX_DELAY );
@@ -21,7 +23,8 @@ void communicationTask(void *pvParameters)
             }else if(hb_msg.source == 2){
                 UARTprintf("\n\r [HEARBEAT] from [WEATHER_TASK] ");
             }
-        }if(notifyValue & DATA_MSG){
+        }if(notifyValue & DATA_MSG)
+        {
             xQueueReceive(data_queue, &data_msg, 10);
             if(data_msg.source == 1){
                 UARTprintf("\n\r [PEDOMETER_DATA] from [PEDO_TASK] is %d", data_msg.data);
@@ -29,6 +32,18 @@ void communicationTask(void *pvParameters)
                 UARTprintf("\n\r [HUMIDITY_DATA] from [WEATHER_TASK] is %d (percentage)", data_msg.data);
             }else if(data_msg.source == 2 && data_msg.sensor == TEMPERATURE){
                 UARTprintf("\n\r [TEMPERATURE_DATA] from [WEATHER_TASK] is %d (degree celsius)", data_msg.data);
+            }
+        }if(notifyValue & ERROR_MSG)
+        {
+            xQueueReceive(error_queue, &error_msg, 10);
+            if(data_msg.sensor == 0)
+            {
+                UARTprintf("\n\r [FATAL ERROR] Cannot read temperature data");
+            }else if(data_msg.sensor == 1)
+            {
+                UARTprintf("\n\r [FATAL ERROR] Cannot read humidity data");
+            }else if(data_msg.sensor == 2){
+                UARTprintf("\n\r [FATAL ERROR] Cannot read pedometer data");
             }
         }
     }
@@ -72,6 +87,26 @@ int8_t sendData(uint32_t task, uint32_t data, uint32_t sensor)
         return -1;
     }
     xTaskNotify(xTask3, DATA_MSG, eSetBits);
+    return 0;
+}
+
+int8_t sendError(uint32_t task, uint32_t sensor)
+{
+    message_t msg;
+    msg.type = 3;
+    msg.timestamp = 0;
+    msg.source = task;
+
+    msg.data = 999;
+    msg.sensor = sensor;
+    msg.length = 0;
+    UARTSend_7((uint8_t*)&msg, sizeof(msg));
+    if(pdPASS != xQueueSend(error_queue, (void*)&msg, 10))
+    {
+        UARTprintf("\r\Error sending failed");
+        return -1;
+    }
+    xTaskNotify(xTask3, ERROR_MSG, eSetBits);
     return 0;
 }
 
