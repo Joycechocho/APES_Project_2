@@ -1,4 +1,5 @@
 #include "communication.h"
+#include "UART.h"
 
 extern QueueHandle_t heartbeat_queue;
 extern QueueHandle_t data_queue;
@@ -41,8 +42,9 @@ int8_t sendHeartbeat(Task task)
     msg.source = task;
 
     msg.data = 0;
-    msg.sensor = 0;
+    msg.sensor = NONE;
     msg.length = 0;
+    UARTSend_7((uint8_t*)&msg, sizeof(msg));
     if(pdPASS != xQueueSend(heartbeat_queue, (void*)&msg, 10))
     {
         UARTprintf("\r\nHeartBeat sending failed");
@@ -62,6 +64,8 @@ int8_t sendData(Task task, uint32_t data, Data sensor)
     msg.data = data;
     msg.sensor = sensor;
     msg.length = 0;
+    UARTSend_7((uint8_t*)&msg, sizeof(msg));
+    UARTSend((uint8_t*)&msg, sizeof(msg));
     if(pdPASS != xQueueSend(data_queue, (void*)&msg, 10))
     {
         UARTprintf("\r\nData sending failed");
@@ -70,3 +74,24 @@ int8_t sendData(Task task, uint32_t data, Data sensor)
     xTaskNotify(xTask3, DATA_MSG, eSetBits);
     return 0;
 }
+
+
+void UARTSend_7(const uint8_t *pui8Buffer, uint32_t ui32Count)
+{
+    while(ui32Count--)
+    {
+        UARTCharPutNonBlocking(UART7_BASE, *pui8Buffer++);
+//        UARTCharPut(UART7_BASE, *pui8Buffer++);
+    }
+}
+
+void UARTSend(const uint8_t *pui8Buffer, uint32_t ui32Count)
+{
+    while(ui32Count--)
+    {
+        UARTCharPutNonBlocking(UART0_BASE, *pui8Buffer++);
+//        UARTCharPut(UART7_BASE, *pui8Buffer++);
+    }
+}
+
+

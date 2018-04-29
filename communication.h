@@ -21,30 +21,54 @@
 typedef enum task
 {
     MAIN_TASK, //0
-    PEDO_TASK,
-    WEATHER_TASK,
+    PEDO_TASK,//1
+    WEATHER_TASK,//2
     COMM_TASK
 }Task;
 
+//typedef struct task
+//{
+//    uint8_t MAIN_TASK =0 ;
+//    uint8_t PEDO_TASK=1;
+//    uint8_t WEATHER_TASK=2;
+//    uint8_t COMM_TASK=3;
+//}Task;
+
 typedef enum type
 {
-    INIT,
+    INIT, //0
     HEARTBEAT,
-    DATA,
+    DATA,//2
     ERROR
 }Type;
 
+//typedef struct type
+//{
+//    uint8_t INIT = 0;
+//    uint8_t HEARTBEAT = 1;
+//    uint8_t DATA = 2 ;
+//    uint8_t ERROR = 3;
+//}Type;
+
 typedef enum data
 {
-    TEMPERATURE,
+    TEMPERATURE, //0
     HUMIDITY,
-    PEDOMETER
+    PEDOMETER,
+    NONE
 }Data;
+
+//typedef struct data
+//{
+//    uint8_t TEMPERATURE = 0;
+//    uint8_t HUMIDITY = 1;
+//    uint8_t PEDOMETER = 2;
+//}Data;
 
 
 typedef struct
 {
-    Type        type;
+    uint32_t     type;
     uint32_t    timestamp;
     Task        source;
     uint32_t    data;
@@ -55,4 +79,6 @@ typedef struct
 void communicationTask(void *pvParameters);
 int8_t sendHeartbeat(Task task);
 int8_t sendData(Task task, uint32_t data, Data sensor);
+void UARTSend_7(const uint8_t *pui8Buffer, uint32_t ui32Count);
+void UARTSend(const uint8_t *pui8Buffer, uint32_t ui32Count);
 

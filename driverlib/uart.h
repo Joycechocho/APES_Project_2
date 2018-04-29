@@ -40,6 +40,8 @@
 #ifndef __DRIVERLIB_UART_H__
 #define __DRIVERLIB_UART_H__
 
+#include <stdint.h>
+#include <stdbool.h>
 //*****************************************************************************
 //
 // If building with a C++ compiler, make all of the definitions in this header

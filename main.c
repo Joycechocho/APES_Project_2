@@ -20,6 +20,7 @@
 #include "pedometer.h"
 #include "I2C.h"
 #include "main.h"
+#include "UART.h"
 
 QueueHandle_t heartbeat_queue;
 QueueHandle_t data_queue;
@@ -45,6 +46,7 @@ int main(void)
 
     // Initialize the I2C for temperature and humidity
     Init_I2C();
+    ConfigureUART();
 
     heartbeat_queue = xQueueCreate(10, sizeof(message_t));
     data_queue = xQueueCreate(10, sizeof(message_t));
