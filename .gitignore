@@ -4,3 +4,8 @@ Demo/
 Release/
 *.lnt
 .config/
+.setting/
+.ccsproject
+.cproject
+.project
+.xdchelp
