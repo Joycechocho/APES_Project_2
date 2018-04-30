@@ -33,12 +33,11 @@ void ConfigureUART(void)
     ROM_UARTConfigSetExpClk(UART7_BASE, 32000000, 57600,(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE |
             UART_CONFIG_PAR_NONE));
     IntMasterEnable();
-   IntEnable(INT_UART7);
+    IntEnable(INT_UART7);
     UARTIntEnable(UART7_BASE, UART_INT_RX);
 
 
 }
-
 
 void UART7IntHandler(void)
 {
@@ -54,4 +53,5 @@ void UART7IntHandler(void)
         UARTprintf("receiving back %d\n",value);
 
 }
+
 

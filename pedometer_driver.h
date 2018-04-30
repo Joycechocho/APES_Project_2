@@ -33,7 +33,7 @@
 #define INT_PIN	0x10
 #define LSM6DS3_ACC_GYRO_STEP_COUNTER_H 0x4C
 #define LSM6DS3_ACC_GYRO_STEP_COUNTER_L	0x4B
-int8_t I2C_write_pedometer();
+void I2C_Read_Pedometer();
 uint16_t I2C_write_Pedometer();
 
 
