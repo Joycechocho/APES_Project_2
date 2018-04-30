@@ -1,0 +1,336 @@
+[Logger] The timestamp is: 12745
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | HEARTBEAT from pedometer
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 16 
+
+Source : socket task | TEMPERATURE : 26 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE ERROR
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE ERROR
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE ERROR
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE ERROR
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE ERROR
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE ERROR
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE ERROR
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 26 
+
+Source : socket task | TEMPERATURE : 27 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 26 
+
+Source : socket task | TEMPERATURE : 27 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 26 
+
+Source : socket task | TEMPERATURE : 27 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 26 
+
+Source : socket task | TEMPERATURE : 28 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 27 
+
+Source : socket task | TEMPERATURE : 28 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER : 0 
+
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | HUMIDITY : 27 
+
+Source : socket task | TEMPERATURE : 0 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER ERROR
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE : 0 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER ERROR
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE : 0 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER ERROR
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE : 108 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER ERROR
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE : 108 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER ERROR
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE : 108 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER ERROR
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE : 108 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER ERROR
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE : 108 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER ERROR
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE : 108 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER ERROR
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE : 108 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER ERROR
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE : 108 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER ERROR
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE : 108 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER ERROR
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE : 108 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER ERROR
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE : 108 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER ERROR
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE : 108 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER ERROR
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE : 108 
+
+Source : socket task | HEARTBEAT from pedometer
+Source : socket task | PEDOMEER ERROR
+Souce: socket task | HEARTBEAT from weather
+Source : socket task | TEMPERATURE : 108 
+
+Source : socket task | HEARTBEAT from pedometer
